@@ -1,6 +1,6 @@
 import 'dart:async';
 
-/// A generic StateManager to manage application state efficiently.
+/// A generic StateManager to manage any type of state.
 class StateManager<T> {
   T _state; // The current state
   final _controller = StreamController<T>.broadcast();
@@ -14,8 +14,10 @@ class StateManager<T> {
   /// Stream to listen for state changes.
   Stream<T> get stream => _controller.stream;
 
-  /// Update the state. It triggers state listeners if the state changes.
-  void update(T newState) {
+  /// Update the state using a callback that modifies the current state.
+  /// The callback [updateFunction] takes the current state and returns the modified state.
+  void update(Function(T currentState) updateFunction) {
+    final newState = updateFunction(_state);
     if (_state != newState) {
       _state = newState;
       _controller.add(_state);

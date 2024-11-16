@@ -1,39 +1,29 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# StateManager
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+**StateManager** is a lightweight and flexible state management package for Flutter, designed to handle simple and complex states efficiently. With support for both synchronous and asynchronous state updates, it provides an intuitive API for developers to manage application states with ease.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+---
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Simple State Management**: Manage primitive states like `int`, `double`, `String`.
+- **Complex State Management**: Manage `List`, `Map`, and nested objects effortlessly.
+- **Reactive Updates**: Automatically rebuild UI when state changes.
+- **Synchronous and Asynchronous Updates**: Supports both instant updates and updates from asynchronous tasks (like API calls).
+- **State Reset**: Reset any state back to its initial value.
+- **Memory Safety**: Dispose of resources when no longer needed to avoid memory leaks.
+- **Performance Optimized**: Ensures only relevant parts of the UI rebuild, reducing unnecessary renders.
 
-## Getting started
+---
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+## Getting Started
 
-## Usage
+### **Installation**
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Add the following to your `pubspec.yaml` file:
 
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  simple_state_manager:
+    path: ../
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
