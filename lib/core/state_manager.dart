@@ -18,7 +18,8 @@ class StateManager<T> {
   /// The callback [updateFunction] takes the current state and returns the modified state.
   void update(Function(T currentState) updateFunction) {
     final newState = updateFunction(_state);
-    if (_state != newState) {
+
+    if (_state is Map || _state is List || _state != newState) {
       _state = newState;
       _controller.add(_state);
     }
